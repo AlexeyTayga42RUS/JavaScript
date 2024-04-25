@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Case 6 Вычисление високосного или невисокосного года
+            </title>
+    </head>
+    <body>
+        <script>
+            'use strict'
+           
+            let yearNumber = prompt('Введите год'); // 'Задаём значение года'
+
+            if (yearNumber == null) console.log ('Вы решили отменить действие'); // Условие, если введена отмена действий
+            else if (yearNumber.trim() == "") console.log('Вы ничего не ввели'); // Условие, если ничего не введено
+            else if (isNaN (Number(yearNumber))) console.log('Вы ввели не число'); // Условие, если введено не числовое значение
+            
+            else {
+                        
+                    yearNumber = Math.floor(yearNumber); // Приводим к целому значению
+                    
+                    if (yearNumber%400 == 0) { 
+                        console.log('Год високосный'); // Если делится на 400 без остатка, то год високосный
+                    }
+                    else if (yearNumber%100 == 0 ) { 
+                        console.log('Год невисокосный'); // Если делится на 100 без остатка, то год невисокосный
+                    } 
+                    else if (yearNumber%4 == 0 ) { 
+                        console.log('Год високосный'); // Если делится на 4 без остатка, то год високосный
+                    } 
+                    else {
+                        console.log('Год невисокосный'); // Остальные варианты, то год невисокосный
+                    }     
+            }             
+        </script>
+    </body>
+</html>

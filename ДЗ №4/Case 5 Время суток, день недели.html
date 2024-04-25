@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Case 5 Время суток, день недели
+            </title>
+    </head>
+    <body>
+        <script>
+            'use strict'
+            
+            let currentDate = new Date(); // Текущая дата
+            let currentDay = currentDate.getDay(); // Текущий день 
+            let currentTime = currentDate.getHours(); // Текущее время
+            let weekDay, dayTime;
+       
+            if (currentTime < 6) { 
+                dayTime = "ночь"; // Выполнение условия при интервале [0:00; 6:00)
+            } else if (currentTime >= 6 && currentTime < 12) {
+                dayTime = "утро";  // Выполнение условия при интервале [6:00; 12:00)
+            } else if (currentTime >= 12 && currentTime < 18) {
+                dayTime = "день"; // Выполнение условия при интервале [12:00; 18:00)
+            } else {
+                dayTime = "вечер"; // Выполнение условия при интервале [18:00; 0:00)
+            }
+
+            switch (currentDay) {
+                case 0:
+                    weekDay = "воскресенья"; // Выполнение условия при при 0 дне недели
+                    break;
+                case 1:
+                    weekDay = "понедельника"; // Выполнение условия при при 1 дне недели
+                    break;
+                case 2:
+                    weekDay = "вторника"; // Выполнение условия при при 2 дне недели
+                    break;
+                case 3:
+                    weekDay = "среды"; // Выполнение условия при при 3 дне недели
+                    break;
+                case 4:
+                    weekDay = "четверга"; // Выполнение условия при при 4 дне недели
+                    break;
+                case 5:
+                    weekDay = "пятницы"; // Выполнение условия при при 5 дне недели
+                    break;
+                case 6:
+                    weekDay = "субботы"; // Выполнение условия при при 6 дне недели
+                    break;    
+            }          
+
+            console.log("Сейчас", dayTime, weekDay); // Вывод результата в консоль          
+        </script>
+    </body>
+</html>

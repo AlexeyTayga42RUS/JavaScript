@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Case 3 Стоимость полиса ОСАГО
+            </title>
+    </head>
+    <body>
+        <script>
+            'use strict'
+            
+            let basePrice, enginePower, powerRate, fullPrice; // Объявляем переменные
+
+            basePrice = prompt('Введите базовую стоимость полиса в руб.'); // Введение значения базовой стоимости полиса
+
+            if (basePrice == null) console.log ('Вы решили отменить действие'); // Условие, если введена отмена действий
+            else if (basePrice.trim() == "") console.log('Вы ничего не ввели'); // Условие, если ничего не введено
+            else if (isNaN (Number(basePrice))) console.log('Вы ввели не число'); // Условие, если введено не числовое значение
+            else if (basePrice <= 0) console.log('Вы ввели значение меньше либо равно 0'); // Условие, если введено значение меньше либо равно 0
+            else { 
+            
+                enginePower = prompt('Введите мощность двигателя в л.с.'); // Введение значения мощности двигателя
+
+                if (enginePower == null) console.log ('Вы решили отменить действие'); // Условие, если введена отмена действий
+                else if (enginePower.trim() == "") console.log('Вы ничего не ввели'); // Условие, если ничего не введено
+                else if (isNaN (Number(enginePower))) console.log('Вы ввели не число'); // Условие, если введено не числовое значение
+                else if (enginePower <= 0) console.log('Вы ввели значение меньше либо равно 0');// Условие, если введено значение меньше либо равно 0
+                else {
+                        
+                    if (enginePower > 0 && enginePower <= 50) powerRate = 0.6; // Коэффициент мощности = 0.6, при мощности от 0 до 50 включительно 
+                    else if (enginePower <= 70) powerRate = 1; // Коэффициент мощности = 1, при мощности от 50 до 70 включительно 
+                    else if (enginePower <= 100) powerRate = 1.1; // Коэффициент мощности = 1.1, при мощности от 70 до 100 включительно 
+                    else if (enginePower <= 120) powerRate = 1.2; // Коэффициент мощности = 1.2, при мощности от 100 до 120 включительно 
+                    else if (enginePower <= 150) powerRate = 1.4; // Коэффициент мощности = 0.6, при мощности от 0 до 50 включительно 
+                    else if (enginePower > 150) powerRate = 1.6; // Коэффициент мощности = 1.6, при мощности от 150 
+                   
+                    fullPrice = basePrice * powerRate; // Расчёт полной стоимости полиса
+                    console.log('Полная стоимость полиса ОСАГО равна', fullPrice.toFixed(2), 'рублей'); // Вывод значения полной стоимости полиса в консоль
+                }   
+            }
+    
+        </script>
+    </body>
+</html>
