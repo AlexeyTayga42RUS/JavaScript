@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Case 2 Массив из четных чисел заданной последовательности
+            </title>
+    </head>
+    <body>
+        <script>
+            'use strict';
+           
+            let array = []; // Объявляем массив
+            array = prompt("Введите числа через пробел", "1 4 7 -1 0 5 -2 3").split(" "); // Введение данных для массива
+            let m, X, lt, rt; // Объявляем переменные
+            let decayNumber = array.length;
+            
+            
+            for (let i = 0; i < array.length; i++) {
+                array[i] = Number(array[i]); // Приведение массива к числовому значению
+            }
+            
+            for (let i = 1; i !== array.length; i++) { // Сортировка
+                X = array[i];
+                lt = 0;
+                rt = i - 1;
+                
+                while (true) {
+                    if (lt > rt) {
+                        for (let j = i - 1; j >= lt; j--) {
+                            array[j + 1] = array[j];
+                        }
+                        array[lt] = X;
+                        break;
+
+                    } else {
+                        m = Math.floor( (lt + rt)/2 );
+                        if (X < array[m]) {
+                            lt = m + 1;
+                        } else {
+                            rt = m - 1;
+                        }
+                    }
+                }
+            }
+            
+            for (let i = 0; i < array.length; i++) { // Нахождение положительной части массива
+                if (array[i] <= 0) {
+                    decayNumber = i;
+                    break
+                }
+            }
+      
+            console.log(array.slice(0, decayNumber)); // Вывод в консоль
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Case 2 Массив из четных чисел заданной последовательности
+            </title>
+    </head>
+    <body>
+        <script>
+            'use strict';
+           
+            let array = []; // Объявляем массив
+            let newArray = []; // Объявляем массив
+
+            array = prompt("Введите натуральные числа через пробел", "1 4 7 9 16 35 24 18 11 44").split(" "); // Введение данных для массива с разбивкой через пробел
+
+            for (let i = 0; i < array.length; i++) { // Перебор чисел массива
+                if (array[i] % 2 == 0) newArray.push(array[i]); // Условие, если число массива делится на 2 без остатка, т.е. четное    
+                     // Запись результата в новый массив
+                    else if (newArray.length == 0) console.log("Чётных чисел нет")
+            } 
+            console.log(newArray); // Вывод нового массива в консоль
+            //if (ar.length == 0) console.log("Чётных чисел нет"); // Выполнение условия, если нет чётных чисел
+
+        </script>
+    </body>
+</html>

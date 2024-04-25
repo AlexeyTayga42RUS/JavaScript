@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Case 1 Нулевые элементы
+            </title>
+    </head>
+    <body>
+        <script>
+            'use strict';
+           
+            var array = []; // Объявляем массив
+
+            array = prompt("Введите числа через пробел", "1 0 -7 9 0 35 0 -18 11 0").split(" "); // Введение данных для массива с разбивкой через пробел
+
+            for (let i = 0; i < array.length; i++) { // Перебор чисел массива
+                if (array[i] == 0) console.log(i);// Условие, если число массива равно 0
+            }
+      
+        </script>
+    </body>
+</html>
