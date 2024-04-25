@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Case 4 Количество пятниц 13-е в заданном диапапазоне
+            </title>
+    </head>
+    <body>
+        <script>
+            'use strict';
+           
+            let startYear; // Объявляем переменную начального года
+            let startMonth; // Объявляем переменную начального месяца
+            let startDay; // Объявляем переменную начального дня
+
+            while (true) { // Проверка startYear на ввод
+                if (typeof startYear === 'undefined') startYear = prompt("Введите начальный год", "2001");
+                else if (startYear === null) startYear = prompt("Вы нажали 'Отмена'. Введите начальный год", "2001");
+                else if (startYear.trim() === '') startYear = prompt("Вы ничего не ввели. Введите начальный год", "2001");
+                else if (isNaN (Number(startYear))) startYear = prompt("Вы ввели не число. Введите начальный год", "2001");
+                else if (startYear/Math.floor(startYear) != 1) startYear = prompt("Вы ввели дробное число. Введите начальный год", "2001");
+                else break;
+            };
+            while (true) { // Проверка startMonth на ввод
+                if (typeof startMonth === 'undefined') startMonth = prompt("Введите начальный месяц", "01");
+                else if (startMonth === null) startMonth = prompt("Вы нажали 'Отмена'.Введите начальный месяц", "01");
+                else if (startMonth.trim() === '') startMonth = prompt("Вы ничего не ввели. Введите начальный месяц", "01");
+                else if (isNaN (Number(startMonth))) startMonth = prompt("Вы ввели не число. Введите начальный месяц", "01");
+                else if (startMonth/Math.floor(startMonth) != 1) startMonth = prompt("Вы ввели дробное число. Введите начальный месяц", "01");
+                else break;
+            };
+
+            while (true) { // Проверка startDay на ввод
+                if (typeof startDay === 'undefined') startDay = prompt("Введите начальный день", "01");
+                else if (startDay === null) startDay = prompt("Вы нажали 'Отмена'. Введите начальный день", "01");
+                else if (startDay.trim() === '') startDay = prompt("Вы ничего не ввели. Введите начальный день", "01");
+                else if (isNaN (Number(startDay))) startDay = prompt("Вы ввели не число. Введите начальный день", "01");
+                else if (startDay/Math.floor(startDay) != 1) startDay = prompt("Вы ввели дробное число. Введите начальный день", "01");
+                else break;
+            }; 
+            
+            let finishYear; // Объявляем переменную конечного года
+            let finishMonth; // Объявляем переменную начального месяца
+            let finishDay; // Объявляем переменную начального дня
+
+            while (true) { // Проверка finishYear на ввод
+                if (typeof finishYear === 'undefined') finishYear = prompt("Введите конечный год", "2021");
+                else if (finishYear === null) finishYear = prompt("Вы нажали 'Отмена'. Введите конечный год", "2021");
+                else if (finishYear.trim() === '') finishYear = prompt("Вы ничего не ввели. Введите конечный год", "2021");
+                else if (isNaN (Number(finishYear))) finishYear = prompt("Вы ввели не число. Введите конечный год", "2021");
+                else if (finishYear/Math.floor(finishYear) != 1) finishYear = prompt("Вы ввели дробное число. Введите конечный год", "2021");
+                else break;
+            };
+            while (true) { // Проверка finishMonth на ввод
+                if (typeof finishMonth === 'undefined') finishMonth = prompt("Введите конечный месяц", "09");
+                else if (finishMonth === null) finishMonth = prompt("Вы нажали 'Отмена'. Введите конечный месяц", "09");
+                else if (finishMonth.trim() === '') finishMonth = prompt("Вы ничего не ввели. Введите конечный месяц", "09");
+                else if (isNaN (Number(finishMonth))) finishMonth = prompt("Вы ввели не число. Введите конечный месяц", "09");
+                else if (finishMonth/Math.floor(finishMonth) != 1) finishMonth = prompt("Вы ввели дробное число. Введите конечный месяц", "09");
+                else break;
+            };
+
+            while (true) { // Проверка finishDay на ввод
+                if (typeof finishDay === 'undefined') finishDay = prompt("Введите начальный день", "09");
+                else if (finishDay === null) finishDay = prompt("Вы нажали 'Отмена'. Введите начальный день", "09");
+                else if (finishDay.trim() === '') finishDay = prompt("Вы ничего не ввели. Введите начальный день", "09");
+                else if (isNaN (Number(finishDay))) finishDay = prompt("Вы ввели не число. Введите начальный день", "09");
+                else if (finishDay/Math.floor(finishDay) != 1) finishDay = prompt("Вы ввели дробное число. Введите конечный день", "09");
+                else break;
+            }; 
+            
+            startYear = Number(startYear); // Приведение переменных к числовому значению
+            startMonth = Number(startMonth); // Приведение переменных к числовому значению
+            startDay = Number(startDay); // Приведение переменных к числовому значению
+            finishYear = Number(finishYear); // Приведение переменных к числовому значению
+            finishMonth = Number(finishMonth); // Приведение переменных к числовому значению
+            finishDay = Number(finishDay); // Приведение переменных к числовому значению
+
+            let year = startYear; // Объявляем переменную для выполнения цикла
+            let month = startMonth; // Объявляем переменную для выполнения цикла
+            let day = startDay; // Объявляем переменную для выполнения цикла
+
+            let monthName; // Объявляем переменную для преобразования числового значения месяца в буквенное
+
+            if (startDay > 13) month++; // Выполнение условия, если начальный день больше 13
+
+            while (year <= finishYear) { // Выполнение цикла
+                let month = 0;
+                while (month <= 11) {
+                    if ((year == finishYear) && (month == finishMonth) && (day == finishDay)) break;
+                    let date = new Date(year, month, 13);
+                    if (date.getMonth() == 0) monthName = 'Январь'; // Преобразование значения при 0 месяце
+                    else if (date.getMonth() == 1) monthName = 'Февраль'; // Преобразование значения при 1 месяце
+                    else if (date.getMonth() == 2)  monthName = 'Март'; //Преобразование значения при 2 месяце
+                    else if (date.getMonth() == 3)  monthName = 'Апрель'; // Преобразование значения при 3 месяце   
+                    else if (date.getMonth() == 4)  monthName = 'Май'; // Преобразование значения при 4 месяце
+                    else if (date.getMonth() == 5)  monthName = 'Июнь'; // Преобразование значения при 5 месяце
+                    else if (date.getMonth() == 6)  monthName = 'Июль'; // Преобразование значения при 6 месяце
+                    else if (date.getMonth() == 7)  monthName = 'Август'; // Преобразование значения при 7 месяце
+                    else if (date.getMonth() == 8)  monthName = 'Сентябрь'; // Преобразование значения при 8 месяце
+                    else if (date.getMonth() == 9)  monthName = 'Октябрь'; // Преобразование значения при 9 месяце
+                    else if (date.getMonth() == 10)  monthName = 'Ноябрь'; //Преобразование значения при 10 месяце
+                    else if (date.getMonth() == 11)  monthName = 'Декабрь'; // Преобразование значения при 11 месяце
+                    if (date.getDay() == 5) console.log(monthName, date.getFullYear(), "года"); // При выполнении условия выведение значений в консоль
+                    month++;
+                }
+                year++;
+            }
+        </script>
+    </body>
+</html>

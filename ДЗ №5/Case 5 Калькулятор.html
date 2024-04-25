@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Case 5 Калькулятор
+            </title>
+    </head>
+    <body>
+        <script>
+            'use strict'
+            
+            var firstNumber, mathOperation, secondNumber; // Объявляем переменные
+            
+            while (true) {
+                firstNumber = prompt('Введите первое число'); // Введение значения первого числа
+                
+                if (firstNumber == null) break;
+
+                if (firstNumber.trim() == "") console.log('Вы ничего не ввели'); // Условие, если ничего не введено
+                else if (isNaN (Number(firstNumber))) console.log('Вы ввели не число'); // Условие, если введено не числовое значение
+                else { 
+                
+                    mathOperation = prompt('Введите операцию (+, -, *, /)'); // Введение значения операции
+                    if (mathOperation == null) break;
+
+                    else if (mathOperation.trim() == "") console.log('Вы ничего не ввели'); // Условие, если ничего не введено
+                    else if (mathOperation != "+" && mathOperation != "-" && mathOperation != "*" && mathOperation != "/") console.log('Вы ввели неправильную операцию'); // Условие, если введена неправильная операция
+                    else {
+
+                        secondNumber = prompt('Введите второе число');
+                        if (secondNumber == null) break;
+
+                        else if (secondNumber.trim() == "") console.log('Вы ничего не ввели'); // Условие, если ничего не введено
+                        else if (isNaN (Number(secondNumber))) console.log('Вы ввели не число'); // Условие, если введено не числовое значение
+                        else {
+                                    
+                            firstNumber = Number(firstNumber); // Приводим первое число к числовому значению
+                            secondNumber = Number(secondNumber); // Приводим второе число к числовому значению
+
+                            if (mathOperation == "-") { 
+                                console.log('Результат вычитания', firstNumber - secondNumber); // Операция вычитания
+                            }
+                            else if (mathOperation == "+") {
+                                console.log('Результат сложения', firstNumber + secondNumber); // Операция сложения
+                            } 
+                            else if (mathOperation == "*") {
+                                console.log('Результат умножения', firstNumber * secondNumber); // Операция умножения
+                            } 
+                            else if (mathOperation == "/") {
+                                console.log('Результат деления', firstNumber / secondNumber); // Операция деления
+                            }
+                        }            
+                    }            
+                }                 
+            }            
+        </script>
+    </body>
+</html>
