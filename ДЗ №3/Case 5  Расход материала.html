@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Case 5 Расход материала
+            </title>
+    </head>
+    <body>
+        <script>
+            'use strict'
+            
+            const A = +prompt('Введите ширину сторон бруса в метрах');
+            const H = +prompt('Введите высоту бруса в метрах');
+                        
+            let volumeBalk = A * A * H; // Находим объём бруса
+            let volumeCilinder = Math.PI * (A / 2)**2 * H; // Находим объём цилиндра
+            let volumeTrash = volumeBalk - volumeCilinder; // Находим объем материала, который ушел в расход
+
+            console.log('Объем материала, который ушел в расход', volumeTrash, 'куб. м'); // Выводим ответ в консоль   
+            
+        </script>
+    </body>
+</html>

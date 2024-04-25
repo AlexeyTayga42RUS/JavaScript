@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Case 6 Вычисления с четырёхзначным числом
+            </title>
+    </head>
+    <body>
+        <script>
+            'use strict'
+            
+            let a; // 'Объявляем переменную а'
+           
+            a = +prompt('Введите четырёхзначное число'); // 'Задаём значение переменной а'
+            
+            let digit1 = a % 10; // Четвёртое число
+            
+            let digit2 = Number(((a - digit1) / 10) % 10); // Третье число
+
+            let digit3 = Number(((a - a % 100) / 100) % 10); // Второе число
+
+            let digit4 = Number(((a - a % 1000) / 1000) % 10); // Первое число
+            
+            console.log('Сумма цифр числа', a, 'равна', digit1 + digit2 + digit3 + digit4); // вывод суммы
+            console.log('Произведение цифр числа', a, 'равно', digit1 * digit2 * digit3 * digit4); // вывод произведения
+           
+        </script>
+    </body>
+</html>
