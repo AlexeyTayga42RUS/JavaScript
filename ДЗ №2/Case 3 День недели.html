@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Case 3 День недели
+            </title>
+    </head>
+    <body>
+        <script>
+            'use strict'
+        
+           let objectDate = {}; // Создание объекта
+           let dayofWeek; // Объявление дня недели
+                      
+           objectDate.day = prompt('Введите число месяца'); // Введение числа месяца
+           objectDate.month = prompt('Введите месяц'); // Введение месяца
+           objectDate.year = prompt('Введите год'); // Введение года
+
+           let myDate = new Date(objectDate.year, objectDate.month - 1, objectDate.day); // Создание нового объекта
+                      
+           dayofWeek = myDate.getDay(); // Вычисление дня недели
+           
+           console.log(dayofWeek); // Выводим значение дня недели
+           
+           console.log( objectDate.day, objectDate.month, objectDate.year); // 'Выводим значение числа, месяца, года'
+
+        </script>
+    </body>
+</html>

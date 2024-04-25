@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Case 1 Вычисления
+            </title>
+    </head>
+    <body>
+        <script>
+            'use strict'
+            
+            let firstNumber; // 'Вводим первую переменную'
+            let secondNumber; // 'Вводим вторую переменную'
+            let calculate; // 'Вводим переменную для вычислений'
+
+            firstNumber = Number(prompt('Введите значение первого числа')); // 'Задаём значение первой переменной'
+            secondNumber = Number(prompt('Введите значение второго числа')); // 'Задаём значение второй переменной'
+
+            console.log('Тип первого числа ', typeof firstNumber); // 'Выводим тип первого числа'
+            console.log('Тип второго числа', typeof secondNumber); // 'Выводим тип второго числа'
+            
+            calculate = firstNumber + secondNumber; // 'Вычисление суммы чисел'
+            console.log('Сумма чисел равна ', calculate); // 'Выводим значение суммы чисел'
+            console.log('Тип суммы чисел ', typeof calculate); // 'Выводим тип значения суммы чисел'
+
+            calculate = firstNumber * secondNumber;
+            console.log('Произведение чисел равно ', calculate); // 'Выводим значение произведения чисел'
+            console.log('Тип произведения чисел ', typeof calculate); // 'Выводим тип значения произведения чисел'
+
+            calculate = firstNumber - secondNumber;
+            console.log('Разность чисел равно ', calculate); // 'Выводим значение разности чисел'
+            console.log('Тип разности чисел ', typeof calculate); // 'Выводим тип значения разности чисел'
+            
+            calculate = firstNumber / secondNumber;
+            console.log('Частное чисел равно ', calculate); // 'Выводим значение частного чисел'
+            console.log('Тип частного чисел ', typeof calculate); // 'Выводим тип значения частного чисел'
+
+            calculate = firstNumber % secondNumber;
+            console.log('Остаток от частного чисел равно ', calculate); // 'Выводим значение остаток от чисел'
+            console.log('Тип остатка от деления чисел ', typeof calculate); // 'Выводим тип значения остатка от деления чисел'
+
+            
+        </script>
+    </body>
+</html>

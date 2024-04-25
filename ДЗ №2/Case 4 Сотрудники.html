@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Case 4 Данные сотрудников
+            </title>
+    </head>
+    <body>
+        <script>
+            'use strict'
+            
+            let userFirst = {}; // Объявление объекта первого сотрудника
+            let userSecond = {}; // Объявление объекта второго сотрудника
+            let cashYear; //Объявление переменной общей зарплаты за год
+
+            userFirst.lastName = prompt('Введите фамилию первого сотрудника'); // Введение фамилии первого сотрудника
+            userFirst.cashMonth = Number(prompt('Введите зарплату первого сотрудника')); // Введение зарплаты первого сотрудника
+            
+            userSecond.lastName = prompt('Введите фамилию второго сотрудника'); // Введение фамилии второго сотрудника
+            userSecond.cashMonth = Number(prompt('Введите зарплату второго сотрудника')); // Введение зарплаты второго сотрудника
+
+            userFirst.cashYear = userFirst.cashMonth * 12; // Зарплата первого сотрудника за год
+            userSecond.cashYear = userSecond.cashMonth * 12; // Зарплата второго сотрудника за год
+            cashYear = userFirst.cashYear + userSecond.cashYear; // Общая зарплата за год
+            
+            console.log(userFirst.cashYear, userSecond.cashYear, cashYear); // 'Выводим значения годовой зарплаты первого, второго сотрудника и общая за год'
+            console.log(Math.ceil(cashYear/12)); // Среднемесячная зарплата округлённая в большую сторону
+           
+        </script>
+    </body>
+</html>
